@@ -32,5 +32,18 @@ namespace BackwardsText
                 richTextBox.Text += letter.ToString();
             }
         }
+
+        private void SpaceLettersButton_Click(object sender, EventArgs e)
+        {
+            getText = richTextBox.Text;
+            char[] textChar1 = getText.ToCharArray();
+            List<char> listFirstText = textChar1.OfType<char>().ToList();
+            richTextBox.Text = "";
+
+            foreach (char letter in listFirstText)
+            {
+                richTextBox.Text += letter.ToString() + " ";
+            }
+        }
     }
 }
