@@ -45,5 +45,12 @@ namespace BackwardsText
                 richTextBox.Text += letter.ToString() + " ";
             }
         }
+
+        private void ToUpperCaseButton_Click(object sender, EventArgs e)
+        {
+            getText = richTextBox.Text;
+            richTextBox.Text = "";
+            richTextBox.Text = getText.ToUpper();
+        }
     }
 }

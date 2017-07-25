@@ -31,6 +31,7 @@
             this.ReversTextButton = new System.Windows.Forms.Button();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.SpaceLettersButton = new System.Windows.Forms.Button();
+            this.ToUpperCaseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ReversTextButton
@@ -68,11 +69,24 @@
             this.SpaceLettersButton.UseVisualStyleBackColor = true;
             this.SpaceLettersButton.Click += new System.EventHandler(this.SpaceLettersButton_Click);
             // 
+            // ToUpperCaseButton
+            // 
+            this.ToUpperCaseButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ToUpperCaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToUpperCaseButton.Location = new System.Drawing.Point(331, 21);
+            this.ToUpperCaseButton.Name = "ToUpperCaseButton";
+            this.ToUpperCaseButton.Size = new System.Drawing.Size(157, 34);
+            this.ToUpperCaseButton.TabIndex = 3;
+            this.ToUpperCaseButton.Text = "Upper Case";
+            this.ToUpperCaseButton.UseVisualStyleBackColor = true;
+            this.ToUpperCaseButton.Click += new System.EventHandler(this.ToUpperCaseButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 361);
+            this.Controls.Add(this.ToUpperCaseButton);
             this.Controls.Add(this.SpaceLettersButton);
             this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.ReversTextButton);
@@ -87,6 +101,7 @@
         private System.Windows.Forms.Button ReversTextButton;
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.Button SpaceLettersButton;
+        private System.Windows.Forms.Button ToUpperCaseButton;
     }
 }
 
