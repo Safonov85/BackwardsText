@@ -31,7 +31,7 @@
             this.ReversTextButton = new System.Windows.Forms.Button();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.SpaceLettersButton = new System.Windows.Forms.Button();
-            this.ToUpperCaseButton = new System.Windows.Forms.Button();
+            this.UpperLowerCaseCombo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // ReversTextButton
@@ -69,24 +69,24 @@
             this.SpaceLettersButton.UseVisualStyleBackColor = true;
             this.SpaceLettersButton.Click += new System.EventHandler(this.SpaceLettersButton_Click);
             // 
-            // ToUpperCaseButton
+            // UpperLowerCaseCombo
             // 
-            this.ToUpperCaseButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ToUpperCaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToUpperCaseButton.Location = new System.Drawing.Point(331, 21);
-            this.ToUpperCaseButton.Name = "ToUpperCaseButton";
-            this.ToUpperCaseButton.Size = new System.Drawing.Size(157, 34);
-            this.ToUpperCaseButton.TabIndex = 3;
-            this.ToUpperCaseButton.Text = "Upper Case";
-            this.ToUpperCaseButton.UseVisualStyleBackColor = true;
-            this.ToUpperCaseButton.Click += new System.EventHandler(this.ToUpperCaseButton_Click);
+            this.UpperLowerCaseCombo.FormattingEnabled = true;
+            this.UpperLowerCaseCombo.Items.AddRange(new object[] {
+            "UpperCase",
+            "LowerCase"});
+            this.UpperLowerCaseCombo.Location = new System.Drawing.Point(332, 21);
+            this.UpperLowerCaseCombo.Name = "UpperLowerCaseCombo";
+            this.UpperLowerCaseCombo.Size = new System.Drawing.Size(154, 21);
+            this.UpperLowerCaseCombo.TabIndex = 3;
+            this.UpperLowerCaseCombo.SelectedIndexChanged += new System.EventHandler(this.UpperLowerCaseCombo_SelectedIndexChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 361);
-            this.Controls.Add(this.ToUpperCaseButton);
+            this.Controls.Add(this.UpperLowerCaseCombo);
             this.Controls.Add(this.SpaceLettersButton);
             this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.ReversTextButton);
@@ -101,7 +101,7 @@
         private System.Windows.Forms.Button ReversTextButton;
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.Button SpaceLettersButton;
-        private System.Windows.Forms.Button ToUpperCaseButton;
+        private System.Windows.Forms.ComboBox UpperLowerCaseCombo;
     }
 }
 

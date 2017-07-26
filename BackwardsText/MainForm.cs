@@ -16,6 +16,7 @@ namespace BackwardsText
         public MainForm()
         {
             InitializeComponent();
+            UpperLowerCaseCombo.SelectedIndex = 0;
         }
 
         private void ReversTextButton_Click(object sender, EventArgs e)
@@ -46,11 +47,20 @@ namespace BackwardsText
             }
         }
 
-        private void ToUpperCaseButton_Click(object sender, EventArgs e)
+        private void UpperLowerCaseCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            getText = richTextBox.Text;
-            richTextBox.Text = "";
-            richTextBox.Text = getText.ToUpper();
+            if(UpperLowerCaseCombo.SelectedIndex == 0)
+            {
+                getText = richTextBox.Text;
+                richTextBox.Text = "";
+                richTextBox.Text = getText.ToUpper();
+            }
+            if(UpperLowerCaseCombo.SelectedIndex == 1)
+            {
+                getText = richTextBox.Text;
+                richTextBox.Text = "";
+                richTextBox.Text = getText.ToLower();
+            }
         }
     }
 }
