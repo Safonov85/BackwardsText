@@ -36,14 +36,40 @@ namespace BackwardsText
 
         private void SpaceLettersButton_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        void SpaceLetters(bool space)
+        {
             getText = richTextBox.Text;
             char[] textChar1 = getText.ToCharArray();
             List<char> listFirstText = textChar1.OfType<char>().ToList();
             richTextBox.Text = "";
+            bool letterFound = false;
 
             foreach (char letter in listFirstText)
             {
-                richTextBox.Text += letter.ToString() + " ";
+                if(space == true)
+                {
+                    richTextBox.Text += letter.ToString() + " ";
+                }
+                else
+                {
+                    if(letterFound == true)
+                    {
+                        if(letter.ToString().Contains(" "))
+                        {
+                            string removal = letter.ToString();
+                            string anotherOne = removal.Replace(" ", string.Empty);
+                            richTextBox.Text += anotherOne;
+                        }
+                    }
+                    else
+                    {
+                        richTextBox.Text += letter.ToString();
+                        letterFound = true;
+                    }
+                }
             }
         }
 
@@ -61,6 +87,16 @@ namespace BackwardsText
                 richTextBox.Text = "";
                 richTextBox.Text = getText.ToLower();
             }
+        }
+
+        private void SpaceLetterMinusButton_Click(object sender, EventArgs e)
+        {
+            SpaceLetters(false);
+        }
+
+        private void SpaceLetterPlusButton_Click(object sender, EventArgs e)
+        {
+            SpaceLetters(true);
         }
     }
 }
