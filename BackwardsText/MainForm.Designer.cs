@@ -38,7 +38,7 @@
             // 
             // ReversTextButton
             // 
-            this.ReversTextButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ReversTextButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ReversTextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReversTextButton.Location = new System.Drawing.Point(12, 21);
             this.ReversTextButton.Name = "ReversTextButton";
