@@ -108,5 +108,24 @@ namespace BackwardsText
         {
             SpaceLetters(true);
         }
+
+        private void ListWordsButton_Click(object sender, EventArgs e)
+        {
+            List<string> listText = new List<string>();
+
+            getText = richTextBox.Text;
+            string[] wordsText1 = getText.Split(' ');
+            foreach (string word in wordsText1)
+            {
+                listText.Add(word);
+            }
+
+            richTextBox.Text = "";
+
+            foreach(string word in listText)
+            {
+                richTextBox.Text += word + Environment.NewLine;
+            }
+        }
     }
 }
