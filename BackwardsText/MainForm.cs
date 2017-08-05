@@ -111,6 +111,11 @@ namespace BackwardsText
 
         private void ListWordsButton_Click(object sender, EventArgs e)
         {
+            ListWords();
+        }
+
+        void ListWords()
+        {
             List<string> listText = new List<string>();
 
             getText = richTextBox.Text;
@@ -122,7 +127,7 @@ namespace BackwardsText
 
             richTextBox.Text = "";
 
-            foreach(string word in listText)
+            foreach (string word in listText)
             {
                 richTextBox.Text += word + Environment.NewLine;
             }
