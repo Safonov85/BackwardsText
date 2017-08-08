@@ -132,5 +132,25 @@ namespace BackwardsText
                 richTextBox.Text += word + Environment.NewLine;
             }
         }
+
+        private void CountWordsButton_Click(object sender, EventArgs e)
+        {
+            CountWords();
+        }
+
+        void CountWords()
+        {
+            List<string> listText = new List<string>();
+            int amount = 0;
+
+            getText = richTextBox.Text;
+            string[] wordsText1 = getText.Split(' ');
+            foreach (string word in wordsText1)
+            {
+                amount++;
+            }
+
+            MessageBox.Show(amount.ToString() + " words in this text.");
+        }
     }
 }

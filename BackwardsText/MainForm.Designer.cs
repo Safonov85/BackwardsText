@@ -35,6 +35,7 @@
             this.SpaceLetterMinusButton = new System.Windows.Forms.Button();
             this.SpaceLettersLabel = new System.Windows.Forms.Label();
             this.ListWordsButton = new System.Windows.Forms.Button();
+            this.CountWordsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ReversTextButton
@@ -113,11 +114,23 @@
             this.ListWordsButton.UseVisualStyleBackColor = true;
             this.ListWordsButton.Click += new System.EventHandler(this.ListWordsButton_Click);
             // 
+            // CountWordsButton
+            // 
+            this.CountWordsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CountWordsButton.Location = new System.Drawing.Point(597, 21);
+            this.CountWordsButton.Name = "CountWordsButton";
+            this.CountWordsButton.Size = new System.Drawing.Size(112, 34);
+            this.CountWordsButton.TabIndex = 8;
+            this.CountWordsButton.Text = "Count Words";
+            this.CountWordsButton.UseVisualStyleBackColor = true;
+            this.CountWordsButton.Click += new System.EventHandler(this.CountWordsButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 361);
+            this.Controls.Add(this.CountWordsButton);
             this.Controls.Add(this.ListWordsButton);
             this.Controls.Add(this.SpaceLettersLabel);
             this.Controls.Add(this.SpaceLetterMinusButton);
@@ -141,6 +154,7 @@
         private System.Windows.Forms.Button SpaceLetterMinusButton;
         private System.Windows.Forms.Label SpaceLettersLabel;
         private System.Windows.Forms.Button ListWordsButton;
+        private System.Windows.Forms.Button CountWordsButton;
     }
 }
 
