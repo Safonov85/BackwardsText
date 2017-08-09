@@ -28,7 +28,7 @@ namespace BackwardsText
 
             richTextBox.Text = "";
 
-            foreach(char letter in listFirstText)
+            foreach (char letter in listFirstText)
             {
                 richTextBox.Text += letter.ToString();
             }
@@ -36,7 +36,7 @@ namespace BackwardsText
 
         private void SpaceLettersButton_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         void SpaceLetters(bool space)
@@ -50,13 +50,13 @@ namespace BackwardsText
 
             foreach (char letter in listFirstText)
             {
-                if(space == true)
+                if (space == true)
                 {
                     richTextBox.Text += letter.ToString() + " ";
                 }
                 else
                 {
-                    if(!letter.ToString().Contains(" "))
+                    if (!letter.ToString().Contains(" "))
                     {
                         richTextBox.Text += letter.ToString() + " ";
                     }
@@ -64,7 +64,7 @@ namespace BackwardsText
                     {
                         richTextBox.Text += letter.ToString();
                     }
-                    
+
                     //if(letterFound == true)
                     //{
                     //    if(letter.ToString().Contains(" "))
@@ -85,13 +85,13 @@ namespace BackwardsText
 
         private void UpperLowerCaseCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(UpperLowerCaseCombo.SelectedIndex == 0)
+            if (UpperLowerCaseCombo.SelectedIndex == 0)
             {
                 getText = richTextBox.Text;
                 richTextBox.Text = "";
                 richTextBox.Text = getText.ToUpper();
             }
-            if(UpperLowerCaseCombo.SelectedIndex == 1)
+            if (UpperLowerCaseCombo.SelectedIndex == 1)
             {
                 getText = richTextBox.Text;
                 richTextBox.Text = "";
@@ -133,12 +133,22 @@ namespace BackwardsText
             }
         }
 
-        private void CountWordsButton_Click(object sender, EventArgs e)
+        void CountAsync()
         {
-            CountWords();
+            if(richTextBox.Text != "")
+            {
+                WordAmountLabel.Text = "Words Amount: " + CountWords().ToString();
+            }
+            else
+            {
+                WordAmountLabel.Text = 0.ToString();
+            }
+            // This method runs asynchronously.
+            //int amount = await Task.Run(() => CountWords());
+            //WordAmountLabel.Text = "Word Amount: " + amount.ToString();
         }
 
-        void CountWords()
+        int CountWords()
         {
             List<string> listText = new List<string>();
             int amount = 0;
@@ -150,7 +160,15 @@ namespace BackwardsText
                 amount++;
             }
 
-            MessageBox.Show(amount.ToString() + " words in this text.");
+            return amount;
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+
+            CountAsync();
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
