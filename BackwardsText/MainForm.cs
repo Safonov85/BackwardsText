@@ -163,10 +163,25 @@ namespace BackwardsText
             return amount;
         }
 
+        void LetterAmount()
+        {
+            LetterAmountLabel.Text = "Letter Amount: " + CountLetters().ToString();
+        }
+
+        int CountLetters()
+        {
+            int amount = 0;
+
+            getText = richTextBox.Text;
+            amount = getText.Length;
+
+            return amount;
+        }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-
             CountAsync();
+            LetterAmount();
 
             return base.ProcessCmdKey(ref msg, keyData);
         }

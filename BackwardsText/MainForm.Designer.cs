@@ -36,11 +36,11 @@
             this.SpaceLettersLabel = new System.Windows.Forms.Label();
             this.ListWordsButton = new System.Windows.Forms.Button();
             this.WordAmountLabel = new System.Windows.Forms.Label();
+            this.LetterAmountLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ReversTextButton
             // 
-            this.ReversTextButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ReversTextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReversTextButton.Location = new System.Drawing.Point(12, 21);
             this.ReversTextButton.Name = "ReversTextButton";
@@ -57,7 +57,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox.Location = new System.Drawing.Point(12, 61);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(720, 288);
+            this.richTextBox.Size = new System.Drawing.Size(822, 288);
             this.richTextBox.TabIndex = 1;
             this.richTextBox.Text = "";
             // 
@@ -117,17 +117,27 @@
             // WordAmountLabel
             // 
             this.WordAmountLabel.AutoSize = true;
-            this.WordAmountLabel.Location = new System.Drawing.Point(597, 9);
+            this.WordAmountLabel.Location = new System.Drawing.Point(597, 21);
             this.WordAmountLabel.Name = "WordAmountLabel";
             this.WordAmountLabel.Size = new System.Drawing.Size(84, 13);
             this.WordAmountLabel.TabIndex = 8;
             this.WordAmountLabel.Text = "Word Amount: 0";
             // 
+            // LetterAmountLabel
+            // 
+            this.LetterAmountLabel.AutoSize = true;
+            this.LetterAmountLabel.Location = new System.Drawing.Point(596, 35);
+            this.LetterAmountLabel.Name = "LetterAmountLabel";
+            this.LetterAmountLabel.Size = new System.Drawing.Size(85, 13);
+            this.LetterAmountLabel.TabIndex = 9;
+            this.LetterAmountLabel.Text = "Letter Amount: 0";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 361);
+            this.ClientSize = new System.Drawing.Size(846, 361);
+            this.Controls.Add(this.LetterAmountLabel);
             this.Controls.Add(this.WordAmountLabel);
             this.Controls.Add(this.ListWordsButton);
             this.Controls.Add(this.SpaceLettersLabel);
@@ -153,6 +163,7 @@
         private System.Windows.Forms.Label SpaceLettersLabel;
         private System.Windows.Forms.Button ListWordsButton;
         private System.Windows.Forms.Label WordAmountLabel;
+        private System.Windows.Forms.Label LetterAmountLabel;
     }
 }
 
