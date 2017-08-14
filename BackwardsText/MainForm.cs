@@ -13,6 +13,7 @@ namespace BackwardsText
     public partial class MainForm : Form
     {
         public string getText;
+        private int fontSize = 10;
         public MainForm()
         {
             InitializeComponent();
@@ -184,6 +185,17 @@ namespace BackwardsText
             LetterAmount();
 
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void IncreaseVolumeButton_Click(object sender, EventArgs e)
+        {
+            getText = richTextBox.Text;
+
+            richTextBox.SelectAll();
+
+            fontSize++;
+
+            richTextBox.SelectionFont = new System.Drawing.Font("Tahoma", fontSize);
         }
     }
 }

@@ -37,6 +37,7 @@
             this.ListWordsButton = new System.Windows.Forms.Button();
             this.WordAmountLabel = new System.Windows.Forms.Label();
             this.LetterAmountLabel = new System.Windows.Forms.Label();
+            this.IncreaseVolumeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ReversTextButton
@@ -132,11 +133,23 @@
             this.LetterAmountLabel.TabIndex = 9;
             this.LetterAmountLabel.Text = "Letter Amount: 0";
             // 
+            // IncreaseVolumeButton
+            // 
+            this.IncreaseVolumeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IncreaseVolumeButton.Location = new System.Drawing.Point(745, 20);
+            this.IncreaseVolumeButton.Name = "IncreaseVolumeButton";
+            this.IncreaseVolumeButton.Size = new System.Drawing.Size(89, 34);
+            this.IncreaseVolumeButton.TabIndex = 10;
+            this.IncreaseVolumeButton.Text = "Bigger";
+            this.IncreaseVolumeButton.UseVisualStyleBackColor = true;
+            this.IncreaseVolumeButton.Click += new System.EventHandler(this.IncreaseVolumeButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 361);
+            this.Controls.Add(this.IncreaseVolumeButton);
             this.Controls.Add(this.LetterAmountLabel);
             this.Controls.Add(this.WordAmountLabel);
             this.Controls.Add(this.ListWordsButton);
@@ -164,6 +177,7 @@
         private System.Windows.Forms.Button ListWordsButton;
         private System.Windows.Forms.Label WordAmountLabel;
         private System.Windows.Forms.Label LetterAmountLabel;
+        private System.Windows.Forms.Button IncreaseVolumeButton;
     }
 }
 
