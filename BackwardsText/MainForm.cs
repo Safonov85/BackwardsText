@@ -189,13 +189,26 @@ namespace BackwardsText
 
         private void IncreaseVolumeButton_Click(object sender, EventArgs e)
         {
-            getText = richTextBox.Text;
+            if(fontSize < 52)
+            {
+                richTextBox.SelectAll();
 
-            richTextBox.SelectAll();
+                fontSize++;
 
-            fontSize++;
+                richTextBox.SelectionFont = new System.Drawing.Font("Tahoma", fontSize);
+            }
+        }
 
-            richTextBox.SelectionFont = new System.Drawing.Font("Tahoma", fontSize);
+        private void DecreaseSizeButton_Click(object sender, EventArgs e)
+        {
+            if(fontSize > 2)
+            {
+                richTextBox.SelectAll();
+
+                fontSize--;
+
+                richTextBox.SelectionFont = new System.Drawing.Font("Tahoma", fontSize);
+            }
         }
     }
 }
