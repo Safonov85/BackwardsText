@@ -191,11 +191,7 @@ namespace BackwardsText
         {
             if(fontSize < 52)
             {
-                richTextBox.SelectAll();
-
-                fontSize++;
-
-                richTextBox.SelectionFont = new System.Drawing.Font("Tahoma", fontSize);
+                SizeLetters(true);
             }
         }
 
@@ -203,12 +199,24 @@ namespace BackwardsText
         {
             if(fontSize > 2)
             {
-                richTextBox.SelectAll();
-
-                fontSize--;
-
-                richTextBox.SelectionFont = new System.Drawing.Font("Tahoma", fontSize);
+                SizeLetters(false);
             }
+        }
+
+        void SizeLetters(bool size)
+        {
+            richTextBox.SelectAll();
+
+            if (size)
+            {
+                fontSize++;
+            }
+            else
+            {
+                fontSize--;
+            }
+
+            richTextBox.SelectionFont = new System.Drawing.Font("Tahoma", fontSize);
         }
     }
 }

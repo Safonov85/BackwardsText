@@ -59,7 +59,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox.Location = new System.Drawing.Point(12, 61);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(822, 288);
+            this.richTextBox.Size = new System.Drawing.Size(942, 288);
             this.richTextBox.TabIndex = 1;
             this.richTextBox.Text = "";
             // 
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 361);
+            this.ClientSize = new System.Drawing.Size(966, 361);
             this.Controls.Add(this.DecreaseSizeButton);
             this.Controls.Add(this.IncreaseVolumeButton);
             this.Controls.Add(this.LetterAmountLabel);
