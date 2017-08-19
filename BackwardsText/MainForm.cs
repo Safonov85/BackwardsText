@@ -20,6 +20,7 @@ namespace BackwardsText
             UpperLowerCaseCombo.SelectedIndex = 0;
         }
 
+        // Reversing Text
         private void ReversTextButton_Click(object sender, EventArgs e)
         {
             getText = richTextBox.Text;
@@ -40,6 +41,7 @@ namespace BackwardsText
 
         }
 
+        // Adding more spaces between letters, or less. Not working completely at this point- NEEDS FIX
         void SpaceLetters(bool space)
         {
             getText = richTextBox.Text;
@@ -115,6 +117,7 @@ namespace BackwardsText
             ListWords();
         }
 
+        // Listing all the words on each line individually
         void ListWords()
         {
             List<string> listText = new List<string>();
@@ -134,6 +137,7 @@ namespace BackwardsText
             }
         }
 
+        // Currently 'Async' not working properly
         void CountAsync()
         {
             if(richTextBox.Text != "")
@@ -149,6 +153,7 @@ namespace BackwardsText
             //WordAmountLabel.Text = "Word Amount: " + amount.ToString();
         }
 
+        // Counting how many Words in the text
         int CountWords()
         {
             List<string> listText = new List<string>();
@@ -169,6 +174,7 @@ namespace BackwardsText
             LetterAmountLabel.Text = "Letter Amount: " + CountLetters().ToString();
         }
 
+        // Counting how many letters in the text
         int CountLetters()
         {
             int amount = 0;
@@ -179,6 +185,7 @@ namespace BackwardsText
             return amount;
         }
 
+        // Update anything called in this method whenever a key is pressed
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             CountAsync();
@@ -203,6 +210,7 @@ namespace BackwardsText
             }
         }
 
+        // Resize the letters either way
         void SizeLetters(bool size)
         {
             richTextBox.SelectAll();
