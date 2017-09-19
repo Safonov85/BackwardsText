@@ -14,6 +14,8 @@ namespace BackwardsText
     {
         public string getText;
         private int fontSize = 10;
+        List<string> allTexts = new List<string>();
+
         public MainForm()
         {
             InitializeComponent();
@@ -48,6 +50,11 @@ namespace BackwardsText
             char[] textChar1 = getText.ToCharArray();
             List<char> listFirstText = textChar1.OfType<char>().ToList();
 
+            if (space == true)
+            {
+                allTexts.Add(getText);
+            }
+            
             richTextBox.Text = "";
             bool letterFound = false;
 
@@ -59,29 +66,12 @@ namespace BackwardsText
                 }
                 else
                 {
-                    if (!letter.ToString().Contains(" "))
+                    if(allTexts.Any())
                     {
-                        richTextBox.Text += letter.ToString() + " ";
+                        richTextBox.Text = allTexts[allTexts.Count - 1];
+                        allTexts.RemoveAt(allTexts.Count - 1);
+                        return;
                     }
-                    else
-                    {
-                        richTextBox.Text += letter.ToString();
-                    }
-
-                    //if(letterFound == true)
-                    //{
-                    //    if(letter.ToString().Contains(" "))
-                    //    {
-                    //        string removal = letter.ToString();
-                    //        string anotherOne = removal.Replace(" ", string.Empty);
-                    //        richTextBox.Text += anotherOne;
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    richTextBox.Text += letter.ToString();
-                    //    letterFound = true;
-                    //}
                 }
             }
         }
