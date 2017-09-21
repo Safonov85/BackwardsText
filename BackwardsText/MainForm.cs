@@ -15,6 +15,7 @@ namespace BackwardsText
         public string getText;
         private int fontSize = 10;
         List<string> allTexts = new List<string>();
+		List<string> undoRedo = new List<string>();
 
         public MainForm()
         {
@@ -43,7 +44,7 @@ namespace BackwardsText
 
         }
 
-        // Adding more spaces between letters, or less. Not working completely at this point- NEEDS FIX
+        // Adding more spaces between letters, or less.
         void SpaceLetters(bool space)
         {
             getText = richTextBox.Text;
@@ -54,9 +55,13 @@ namespace BackwardsText
             {
                 allTexts.Add(getText);
             }
+
+			if(space == false && !allTexts.Any())
+			{
+				return;
+			}
             
             richTextBox.Text = "";
-            bool letterFound = false;
 
             foreach (char letter in listFirstText)
             {
@@ -106,6 +111,11 @@ namespace BackwardsText
         {
             ListWords();
         }
+
+		void UndoRedoSave()
+		{
+			undoRedo.Add(richTextBox.Text);
+		}
 
         // Listing all the words on each line individually
         void ListWords()
@@ -216,5 +226,25 @@ namespace BackwardsText
 
             richTextBox.SelectionFont = new System.Drawing.Font("Tahoma", fontSize);
         }
-    }
+
+		private void richTextBox_KeyUp(object sender, KeyEventArgs e)
+		{
+			UndoRedoSave();
+		}
+
+		private void UndoButton_Click(object sender, EventArgs e)
+		{
+			Undo();
+		}
+
+		void Undo()
+		{
+			if (undoRedo.Count < 2)
+			{
+				return;
+			}
+			undoRedo.RemoveAt(undoRedo.Count - 1);
+			richTextBox.Text = undoRedo[undoRedo.Count - 1];
+		}
+	}
 }
