@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace BackwardsText
 {
+    // ATTENTION!! Need to redo this into an app for Windows or Linux or Mac
+
     public partial class MainForm : Form
     {
         public string getText;
