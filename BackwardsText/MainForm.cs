@@ -12,6 +12,7 @@ namespace BackwardsText
 {
     // ATTENTION!! Need to redo this into an app for Windows or Linux or Mac
     // Need to add more functions for text manipulation
+    // more attention to diferention in veriety needed
 
     public partial class MainForm : Form
     {
